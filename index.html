@@ -348,33 +348,36 @@
            </div>
         </div>
     </footer>
-    
-</body>
+
     <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-        $("#reserveBtn").click(function () {
-            $('#reservationModal').modal('toggle')
-        });
-    </script>
-        <script>
-            $("#carouselButton").click(function(){
+        $(document).ready(function () {
+            $("#mycarousel").carousel({ interval: 2000 });
+            $("#carouselButton").click(function () {
                 if ($("#carouselButton").children("span").hasClass('fa-pause')) {
                     $("#mycarousel").carousel('pause');
                     $("#carouselButton").children("span").removeClass('fa-pause');
                     $("#carouselButton").children("span").addClass('fa-play');
                 }
-                else if ($("#carouselButton").children("span").hasClass('fa-play')){
+                else if ($("#carouselButton").children("span").hasClass('fa-play')) {
                     $("#mycarousel").carousel('cycle');
                     $("#carouselButton").children("span").removeClass('fa-play');
-                    $("#carouselButton").children("span").addClass('fa-pause');                    
+                    $("#carouselButton").children("span").addClass('fa-pause');
                 }
             });
-        </script>
+        });
+    </script>
+    <script>
+        $("#reserveBtn").click(function () {
+            $('#reservationModal').modal('toggle')
+        });
+        $("#loginBtn").click(function () {
+            $('#loginModal').modal('toggle')
+        });
 
+    </script>
+</body>
 </html>
