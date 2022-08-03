@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "npm run watch:all",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass -o css/ css/"
+    "lite": "lite-server",
+    "scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\""
   },
   "author": "",
   "license": "ISC",
@@ -15,5 +19,10 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
+  },
+  "devDependencies": {
+    "node-sass": "^7.0.1",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2"
   }
 }
